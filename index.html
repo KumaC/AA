@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+            }
+            main {
+                margin-top: 10%;
+            }
+            section {
+                margin-bottom: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <section>
+                <label>请输入总金额：</label><input type="text" id="total-money" oninput="fOutput()">
+            </section>
+            <section>
+                <label>请输入总人数：</label><input type="text" id="total-count" oninput="fOutput()">
+            </section>
+            <section style="margin-left: -48px;">
+                <span>去掉晓宇后的总金额：</span><span id="result"></span>
+            </section>
+        </main>
+    </body>
+
+    <script>
+        var fOutput = () => {
+            let nTotalMoney = document.querySelector('#total-money').value;
+            let nTotalCount = document.querySelector('#total-count').value;
+            var nAverage = nTotalMoney / nTotalCount;
+            var nResult = nAverage * (nTotalCount - 1);
+            document.querySelector('#result').innerHTML = nResult.toFixed(2);
+        }
+    </script>
+</html>
